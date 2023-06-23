@@ -1,0 +1,24 @@
+/dts-v1/;
+/plugin/;
+/ {
+	compatible = "brcm,bcm2711";
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			my_device {
+				compatible = "my_dev_gpio";
+				status = "okay";
+				label = "seven_seg_gpios";
+                my_value = <20>;
+				seven-seg-gpios = <&gpio 18 0>, // a
+								 <&gpio 20 0>, // b
+								 <&gpio 21 0>, // c
+								 <&gpio 26 0>, // d
+								 <&gpio 19 0>, // e
+								 <&gpio 13 0>, // f
+								 <&gpio 6 0>; // g
+				
+			};
+		};
+	};
+};

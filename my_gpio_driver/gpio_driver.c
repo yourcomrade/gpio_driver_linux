@@ -10,7 +10,7 @@
 /* Meta Information */
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Minh");
-MODULE_DESCRIPTION("A hello world LKM");
+MODULE_DESCRIPTION("A simple platform gpio driver");
 
 /* Declate the probe and remove functions */
 static int dt_probe(struct platform_device *pdev);
@@ -99,7 +99,7 @@ static int dt_probe(struct platform_device *pdev) {
 static int dt_remove(struct platform_device *pdev) {
 	struct device *dev = &pdev->dev;
 	pr_info("dt_probe - Now I am in the remove function\n");
-	sysfs_remove_link(&dev->kobj, "my_own_led_gpios");
+	sysfs_remove_link(&dev->kobj, "led_gpio");
 	gpiod_unexport(led);
     gpiod_put(led);
 	return 0;
