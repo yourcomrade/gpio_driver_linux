@@ -197,7 +197,7 @@ static ssize_t gpios_write(struct file *File, const char *user_buffer, size_t co
 	
 	/* Setting the LED */
 	setting_leds(my_led_gpios->val);
-	*offs += to_copy;
+	//*offs += to_copy;
 	
     pr_info("Value receive from user: %d\n",value);
     return to_copy;
