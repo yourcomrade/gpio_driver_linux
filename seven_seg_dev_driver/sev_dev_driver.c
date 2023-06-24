@@ -21,7 +21,7 @@ struct seven_seg_gpios{
     unsigned char val;
     struct gpio_desc *leds[7];
 };
-static struct gpio_desc *led = NULL;
+
 static struct seven_seg_gpios* my_led_gpios = NULL;
 /* Declate the probe and remove functions */
 static int dt_probe(struct platform_device *pdev);
@@ -180,50 +180,48 @@ void setting_leds(unsigned char num){
 	}
 }
 static ssize_t gpios_write(struct file *File, const char *user_buffer, size_t count, loff_t *offs){
-    int to_copy, not_copied, delta;
+    int to_copy, err;
 	unsigned char value;
 
+	pr_info("count = %d\n",count);
 	/* Get amount of data to copy */
 	to_copy = min(count, sizeof(value));
 
 	/* Copy data from user */
-	not_copied = copy_from_user(&value, user_buffer, to_copy);
-	my_led_gpios->val = value ;
-	switch(value){
-		case '0':
-			gpiod_set_value(led,0);
-			break;
-		case '1':
-			gpiod_set_value(led,1);
-			break;
-		default:
-			pr_info("Out of range\n");
-			break;
+	err = copy_from_user(&value, user_buffer, to_copy);
+	if(err){
+		pr_err("Cannot copy from user\n");
+		return -EFAULT; 
 	}
-	setting_leds(my_led_gpios->val);
+	my_led_gpios->val = value ;
+	
 	/* Setting the LED */
+	setting_leds(my_led_gpios->val);
+	*offs += to_copy;
+	
     pr_info("Value receive from user: %d\n",value);
-    
-    delta = not_copied - to_copy;
-    return delta;
+    return to_copy;
 }
 
 /**/
 static ssize_t gpios_read(struct file *File, char *user_buffer, size_t count, loff_t *offs){
-    int to_copy, not_copied, delta;
+    int to_copy, err;
 	unsigned char value = my_led_gpios->val;
 
 	/* Get amount of data to copy */
 	to_copy = min(count, sizeof(value));
 
 	/* Copy data to user */
-	not_copied = copy_to_user(&value, user_buffer, to_copy);
-
-	/* Setting the LED */
+	err = copy_to_user(user_buffer, &value ,to_copy);
+	if(err){
+		pr_err("Cannot copy to user\n");
+		return -EFAULT; 
+	}
+	
     pr_info("Value send to user: %d\n",value);
+	
    
-    delta = to_copy - not_copied;
-    return delta;
+    return 0;
 }
 static int gpios_open(struct inode *inode, struct file *filp){
 	pr_info("Open device driver\n");
@@ -315,7 +313,7 @@ static int dt_remove(struct platform_device *pdev) {
     for(int i = 0 ;i < 7 ;i++){
         gpiod_put(my_led_gpios->leds[i]);
     }
-    gpiod_put(led);
+   
    
 	kfree(my_led_gpios);
 	misc_deregister(&sev_gpios_misc);

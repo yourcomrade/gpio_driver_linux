@@ -1,0 +1,93 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+DRIVER_CLASS	test/test.c	/^#define DRIVER_CLASS /;"	d	file:
+DRIVER_NAME	test/test.c	/^#define DRIVER_NAME /;"	d	file:
+MY_NAME	seven_seg_dev_driver/sev_dev_driver.c	/^#define MY_NAME /;"	d	file:
+MY_NAME	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^#define MY_NAME /;"	d	file:
+ModuleExit	test/test.c	/^static void __exit ModuleExit(void) {$/;"	f	typeref:typename:void __exit	file:
+ModuleInit	test/test.c	/^static int __init ModuleInit(void) {$/;"	f	typeref:typename:int __init	file:
+all	my_gpio_driver/Makefile	/^all: module dt$/;"	t
+all	new_test/Makefile	/^all: module dt$/;"	t
+all	seven_seg_dev_driver/Makefile	/^all: module dt$/;"	t
+all	seven_seg_sysfs_driver/Makefile	/^all: module dt$/;"	t
+all	test/Makefile	/^all: module$/;"	t
+class_attr_myleds	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static const struct class_attribute class_attr_myleds =__ATTR(myleds, 0644, my_show, my_store);$/;"	v	typeref:typename:const struct class_attribute	file:
+clean	my_gpio_driver/Makefile	/^clean:$/;"	t
+clean	new_test/Makefile	/^clean:$/;"	t
+clean	seven_seg_dev_driver/Makefile	/^clean:$/;"	t
+clean	seven_seg_sysfs_driver/Makefile	/^clean:$/;"	t
+clean	test/Makefile	/^clean:$/;"	t
+driver_close	test/test.c	/^static int driver_close(struct inode *device_file, struct file *instance) {$/;"	f	typeref:typename:int	file:
+driver_open	test/test.c	/^static int driver_open(struct inode *device_file, struct file *instance) {$/;"	f	typeref:typename:int	file:
+driver_read	test/test.c	/^static ssize_t driver_read(struct file *File, char *user_buffer, size_t count, loff_t *offs) {$/;"	f	typeref:typename:ssize_t	file:
+driver_write	test/test.c	/^static ssize_t driver_write(struct file *File, const char *user_buffer, size_t count, loff_t *of/;"	f	typeref:typename:ssize_t	file:
+dt	my_gpio_driver/Makefile	/^dt: myoverlay.dts$/;"	t
+dt	new_test/Makefile	/^dt: testoverlay.dts$/;"	t
+dt	seven_seg_dev_driver/Makefile	/^dt: newoverlay.dts$/;"	t
+dt	seven_seg_sysfs_driver/Makefile	/^dt: anoverlay.dts$/;"	t
+dt_probe	my_gpio_driver/gpio_driver.c	/^static int dt_probe(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_probe	new_test/dt_gpio.c	/^static int dt_probe(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_probe	seven_seg_dev_driver/sev_dev_driver.c	/^static int dt_probe(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_probe	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static int dt_probe(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_remove	my_gpio_driver/gpio_driver.c	/^static int dt_remove(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_remove	new_test/dt_gpio.c	/^static int dt_remove(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_remove	seven_seg_dev_driver/sev_dev_driver.c	/^static int dt_remove(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+dt_remove	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static int dt_remove(struct platform_device *pdev) {$/;"	f	typeref:typename:int	file:
+fops	my_gpio_driver/my.c	/^static struct file_operations fops{$/;"	s	file:
+fops	new_test/dt_gpio.c	/^static struct proc_ops fops = {$/;"	v	typeref:struct:proc_ops	file:
+fops	test/test.c	/^static struct file_operations fops = {$/;"	v	typeref:struct:file_operations	file:
+gpios_close	seven_seg_dev_driver/sev_dev_driver.c	/^static int gpios_close(struct inode *inode, struct file *filp){$/;"	f	typeref:typename:int	file:
+gpios_dev_fops	seven_seg_dev_driver/sev_dev_driver.c	/^static struct file_operations gpios_dev_fops = {$/;"	v	typeref:struct:file_operations	file:
+gpios_open	seven_seg_dev_driver/sev_dev_driver.c	/^static int gpios_open(struct inode *inode, struct file *filp){$/;"	f	typeref:typename:int	file:
+gpios_read	seven_seg_dev_driver/sev_dev_driver.c	/^static ssize_t gpios_read(struct file *File, char *user_buffer, size_t count, loff_t *offs){$/;"	f	typeref:typename:ssize_t	file:
+gpios_write	seven_seg_dev_driver/sev_dev_driver.c	/^static ssize_t gpios_write(struct file *File, const char *user_buffer, size_t count, loff_t *off/;"	f	typeref:typename:ssize_t	file:
+led	my_gpio_driver/gpio_driver.c	/^static struct gpio_desc* led = NULL;$/;"	v	typeref:struct:gpio_desc *	file:
+leds	seven_seg_dev_driver/sev_dev_driver.c	/^    struct gpio_desc *leds[7];$/;"	m	struct:seven_seg_gpios	typeref:struct:gpio_desc * [7]	file:
+leds	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^    struct gpio_desc *leds[7];$/;"	m	struct:seven_seg_gpios	typeref:struct:gpio_desc * [7]	file:
+module	my_gpio_driver/Makefile	/^module:$/;"	t
+module	new_test/Makefile	/^module:$/;"	t
+module	seven_seg_dev_driver/Makefile	/^module:$/;"	t
+module	seven_seg_sysfs_driver/Makefile	/^module:$/;"	t
+module	test/Makefile	/^module:$/;"	t
+my_class	test/test.c	/^static struct class *my_class;$/;"	v	typeref:struct:class *	file:
+my_device	test/test.c	/^static struct cdev my_device;$/;"	v	typeref:struct:cdev	file:
+my_device_nr	test/test.c	/^static dev_t my_device_nr;$/;"	v	typeref:typename:dev_t	file:
+my_driver	my_gpio_driver/gpio_driver.c	/^static struct platform_driver my_driver = {$/;"	v	typeref:struct:platform_driver	file:
+my_driver	new_test/dt_gpio.c	/^static struct platform_driver my_driver = {$/;"	v	typeref:struct:platform_driver	file:
+my_driver	seven_seg_dev_driver/sev_dev_driver.c	/^static struct platform_driver my_driver = {$/;"	v	typeref:struct:platform_driver	file:
+my_driver	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static struct platform_driver my_driver = {$/;"	v	typeref:struct:platform_driver	file:
+my_driver_ids	my_gpio_driver/gpio_driver.c	/^static struct of_device_id my_driver_ids[] = {$/;"	v	typeref:struct:of_device_id[]	file:
+my_driver_ids	new_test/dt_gpio.c	/^static struct of_device_id my_driver_ids[] = {$/;"	v	typeref:struct:of_device_id[]	file:
+my_driver_ids	seven_seg_dev_driver/sev_dev_driver.c	/^static struct of_device_id my_driver_ids[] = {$/;"	v	typeref:struct:of_device_id[]	file:
+my_driver_ids	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static struct of_device_id my_driver_ids[] = {$/;"	v	typeref:struct:of_device_id[]	file:
+my_exit	my_gpio_driver/gpio_driver.c	/^static void __exit my_exit(void) {$/;"	f	typeref:typename:void __exit	file:
+my_exit	new_test/dt_gpio.c	/^static void __exit my_exit(void) {$/;"	f	typeref:typename:void __exit	file:
+my_exit	seven_seg_dev_driver/sev_dev_driver.c	/^static void __exit my_exit(void) {$/;"	f	typeref:typename:void __exit	file:
+my_init	my_gpio_driver/gpio_driver.c	/^static int __init my_init(void) {$/;"	f	typeref:typename:int __init	file:
+my_init	new_test/dt_gpio.c	/^static int __init my_init(void) {$/;"	f	typeref:typename:int __init	file:
+my_init	seven_seg_dev_driver/sev_dev_driver.c	/^static int __init my_init(void) {$/;"	f	typeref:typename:int __init	file:
+my_led	new_test/dt_gpio.c	/^static struct gpio_desc *my_led = NULL;$/;"	v	typeref:struct:gpio_desc *	file:
+my_led2	new_test/dt_gpio.c	/^static struct gpio_desc *my_led2 = NULL;$/;"	v	typeref:struct:gpio_desc *	file:
+my_led_gpios	seven_seg_dev_driver/sev_dev_driver.c	/^static struct seven_seg_gpios* my_led_gpios = NULL;$/;"	v	typeref:struct:seven_seg_gpios *	file:
+my_led_gpios	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static struct seven_seg_gpios* my_led_gpios = NULL;$/;"	v	typeref:struct:seven_seg_gpios *	file:
+my_open	my_gpio_driver/my.c	/^static int my_open(struct inode *inode, struct file *filp){$/;"	f	typeref:typename:int	file:
+my_show	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static ssize_t my_show(struct class *class, struct class_attribute *attr,char *buf){$/;"	f	typeref:typename:ssize_t	file:
+my_store	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^static ssize_t my_store(struct class *class, struct class_attribute *attr, const char *buf, size/;"	f	typeref:typename:ssize_t	file:
+my_write	new_test/dt_gpio.c	/^static ssize_t my_write(struct file *File, const char *user_buffer, size_t count, loff_t *offs) /;"	f	typeref:typename:ssize_t	file:
+proc_file	new_test/dt_gpio.c	/^static struct proc_dir_entry *proc_file;$/;"	v	typeref:struct:proc_dir_entry *	file:
+setting_leds	seven_seg_dev_driver/sev_dev_driver.c	/^void setting_leds(unsigned char num){$/;"	f	typeref:typename:void
+setting_leds	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^void setting_leds(unsigned char num){$/;"	f	typeref:typename:void
+sev_gpios_misc	seven_seg_dev_driver/sev_dev_driver.c	/^static struct miscdevice sev_gpios_misc = {$/;"	v	typeref:struct:miscdevice	file:
+seven_seg_gpios	seven_seg_dev_driver/sev_dev_driver.c	/^struct seven_seg_gpios{$/;"	s	file:
+seven_seg_gpios	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^struct seven_seg_gpios{$/;"	s	file:
+usr_read	my_gpio_driver/my.c	/^static ssize_t usr_read(struct file *File, const char *user_buffer, size_t count, loff_t *offs){$/;"	f	typeref:typename:ssize_t	file:
+usr_write	my_gpio_driver/my.c	/^static ssize_t usr_write(struct file *File, const char *user_buffer, size_t count, loff_t *offs)/;"	f	typeref:typename:ssize_t	file:
+val	seven_seg_dev_driver/sev_dev_driver.c	/^    unsigned char val;$/;"	m	struct:seven_seg_gpios	typeref:typename:unsigned char	file:
+val	seven_seg_sysfs_driver/sev_sysfs_driver.c	/^    unsigned char val;$/;"	m	struct:seven_seg_gpios	typeref:typename:unsigned char	file:
