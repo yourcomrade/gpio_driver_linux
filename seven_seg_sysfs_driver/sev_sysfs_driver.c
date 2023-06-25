@@ -194,7 +194,16 @@ static ssize_t my_store(struct class *class, struct class_attribute *attr, const
 * @brief This function is to read when open file driver
 */
 static ssize_t my_show(struct class *class, struct class_attribute *attr,char *buf){
-    return sprintf(buf, "%d\n", my_led_gpios->val);
+	int err;
+    err = scnprintf(buf, PAGE_SIZE,"%d\n", my_led_gpios->val);
+	pr_info("size: %d\n",sizeof(buf));
+	pr_info("buf: %s\n", buf);
+	pr_info("buf[0]: %c\n",buf[0]);
+	pr_info("buf[1]: %c\n",buf[1]);
+	pr_info("buf[1]_n: %d\n", buf[1]);
+	pr_info("buf[2]: %c\n",buf[2]);
+	pr_info("err = %d\n",err);
+	return err;
 }
 
 /**
