@@ -196,7 +196,6 @@ static ssize_t my_store(struct class *class, struct class_attribute *attr, const
 static ssize_t my_show(struct class *class, struct class_attribute *attr,char *buf){
 	int err;
     err = scnprintf(buf, PAGE_SIZE,"%d\n", my_led_gpios->val);
-	pr_info("size: %d\n",sizeof(buf));
 	pr_info("buf: %s\n", buf);
 	pr_info("buf[0]: %c\n",buf[0]);
 	pr_info("buf[1]: %c\n",buf[1]);
